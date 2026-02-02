@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Rozha+One&display=swap');
 
 :root {
-  --primary: #8b3a3a;      /* Deep Maroon */
+  --primary: #8b3a3a;      /* Deep Maroon (Headings Color) */
   --accent: #d4af37;       /* Gold */
   --text-dark: #2c2c2c;
   --text-light: #555;
@@ -45,12 +45,12 @@ h1, h2, h3, h4 {
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 img { max-width: 100%; display: block; }
 
-/* --- 3. HEADER --- */
+/* --- 3. HEADER (UPDATED TO BROWN) --- */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #1a1a1a;
+  background: var(--primary); /* CHANGED FROM BLACK TO BROWN */
   padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
@@ -343,15 +343,13 @@ nav.main-nav a:hover::after { width: 100%; }
 .menu-category h3 {
   font-size: 1.8rem;
   color: var(--primary);
-  /* The Magic Sticky CSS */
   position: sticky;
-  top: 90px; /* Offset to clear Main Header */
-  background: var(--bg-white); /* Hide content behind it */
+  top: 90px;
+  background: var(--bg-white);
   z-index: 10;
   padding: 10px 20px;
-  border-radius: 0 0 10px 0; /* Corner effect */
+  border-radius: 0 0 10px 0;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
-  
   border-bottom: 2px solid var(--accent);
   margin-bottom: 1.5rem;
   display: inline-block;
@@ -380,17 +378,12 @@ nav.main-nav a:hover::after { width: 100%; }
   border-radius: 8px;
   position: relative;
   overflow: hidden;
-  
-  /* Initial hidden state */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s, background-color 0.3s;
 }
 
-.menu-row.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.menu-row.visible { opacity: 1; transform: translateY(0); }
 
 /* Gold Bar */
 .menu-row::before {
@@ -413,9 +406,7 @@ nav.main-nav a:hover::after { width: 100%; }
   border-color: rgba(212, 175, 55, 0.5); 
 }
 
-.menu-row:hover::before {
-  transform: scaleY(1);
-}
+.menu-row:hover::before { transform: scaleY(1); }
 
 .menu-text h4 { font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--text-dark); }
 .menu-text p { font-size: 0.9rem; color: var(--text-light); }
@@ -464,7 +455,6 @@ nav.main-nav a:hover::after { width: 100%; }
 .info-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
 .card-title { font-family: var(--font-heading); color: var(--primary); font-size: 1.6rem; margin-bottom: 1rem; }
 
-/* MAP FRAME */
 .map-frame {
   margin-top: 1.5rem;
   border-radius: 12px;
@@ -497,7 +487,7 @@ footer { background: #111; color: #aaa; text-align: center; padding: 2rem; borde
   .logo-container { 
     order: 1; 
     width: 100%;
-    background: #1a1a1a; 
+    background: var(--primary); /* CHANGED TO BROWN */
     padding: 1rem;
     text-align: center;
     flex-direction: column;
@@ -512,7 +502,7 @@ footer { background: #111; color: #aaa; text-align: center; padding: 2rem; borde
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: #1a1a1a; 
+    background: var(--primary); /* CHANGED TO BROWN */
     padding: 0.8rem;
     margin-top: 0;
     gap: 1.2rem; 
@@ -540,10 +530,7 @@ footer { background: #111; color: #aaa; text-align: center; padding: 2rem; borde
   .about-card { padding: 2rem 1rem; }
 }
 
-/* ================================================== */
 /* --- 12. UNIVERSAL FLOATING MENU BUTTON & OVERLAY --- */
-/* ================================================== */
-
 .float-menu-btn {
   display: flex; 
   position: fixed;
@@ -569,20 +556,10 @@ footer { background: #111; color: #aaa; text-align: center; padding: 2rem; borde
   gap: 12px;
 }
 
-.float-menu-btn:hover {
-    background-color: var(--accent);
-    color: #1a1a1a;
-    transform: translateX(-50%) translateY(-5px) !important;
-}
-
-.float-menu-btn.visible {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-}
-
+.float-menu-btn:hover { background-color: var(--accent); color: #1a1a1a; transform: translateX(-50%) translateY(-5px) !important; }
+.float-menu-btn.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
 .float-menu-btn .icon { font-size: 1.4rem; }
 
-/* === MENU OVERLAY === */
 .menu-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -618,27 +595,11 @@ footer { background: #111; color: #aaa; text-align: center; padding: 2rem; borde
     border-bottom: 1px solid #eee;
 }
 
-.sheet-header h3 { 
-    margin: 0; 
-    font-size: 1.4rem; 
-    color: var(--primary); 
-    font-family: var(--font-heading);
-}
-
-.close-btn {
-    background: none; border: none; font-size: 32px; cursor: pointer; color: #555;
-    line-height: 1;
-    transition: color 0.2s;
-}
+.sheet-header h3 { margin: 0; font-size: 1.4rem; color: var(--primary); font-family: var(--font-heading); }
+.close-btn { background: none; border: none; font-size: 32px; cursor: pointer; color: #555; line-height: 1; transition: color 0.2s; }
 .close-btn:hover { color: var(--primary); }
 
-.sheet-list { 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-    overflow-y: auto; 
-}
-
+.sheet-list { list-style: none; padding: 0; margin: 0; overflow-y: auto; }
 .sheet-list li a {
     display: block;
     padding: 14px 10px;
@@ -651,13 +612,5 @@ footer { background: #111; color: #aaa; text-align: center; padding: 2rem; borde
     transition: background 0.2s;
 }
 
-.sheet-list li a:hover, .sheet-list li a:active { 
-    background-color: #fff9e6;
-    color: var(--primary);
-    padding-left: 20px;
-}
-
-@keyframes slideUpSheet {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-}
+.sheet-list li a:hover, .sheet-list li a:active { background-color: #fff9e6; color: var(--primary); padding-left: 20px; }
+@keyframes slideUpSheet { from { transform: translateY(100%); } to { transform: translateY(0); } }
